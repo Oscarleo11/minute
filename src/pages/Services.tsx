@@ -1,4 +1,4 @@
-import { Home, DollarSign, Clock, FileCheck, ShieldCheck, HeartHandshake, Car, Briefcase, GraduationCap } from 'lucide-react';
+import { Home, DollarSign, ShieldCheck, HeartHandshake, Car, Briefcase, GraduationCap } from 'lucide-react';
 import './style.css'; // Import fichier CSS
 import Slider from 'react-slick';
 import { motion } from 'framer-motion';
