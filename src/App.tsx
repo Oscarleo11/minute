@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
+import Thanks from './pages/thanks';
 // import Contact from './pages/Contact';
 import LoanForm from './pages/LoanForm';
 import MortgageLoan from './components/services/MortgageLoan';
@@ -32,6 +33,7 @@ function App() {
             <Route path="/services/loan-protection" element={<LoanProtection />} />
             <Route path="/services/personalized-service" element={<PersonalizedService />} />
             <Route path="/services/student-loan" element={<StudentLoan />} />
+            <Route path="/thanks" element={<Thanks />} />
           </Routes>
         </main>
         <Footer />

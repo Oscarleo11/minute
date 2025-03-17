@@ -37,6 +37,90 @@ body {
   background-color: #f9f9f9;
 }
 
+/* Conteneur principal */
+.confirmation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2); /* Dégradé de fond */
+}
+
+/* Carte de confirmation */
+.confirmation-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Titre */
+.confirmation-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4a5568; /* Couleur de titre */
+  margin-bottom: 20px;
+}
+
+/* Texte de confirmation */
+.confirmation-text {
+  font-size: 1rem;
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Lien de support */
+.support-link {
+  color: #667eea; /* Couleur du lien */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.support-link:hover {
+  text-decoration: underline;
+}
+
+/* Bouton de retour */
+.return-button {
+  background-color: #667eea; /* Couleur du bouton */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 20px;
+}
+
+.return-button:hover {
+  background-color: #5a6fd1; /* Couleur au survol */
+  transform: translateY(-2px); /* Effet de levée */
+}
+
+.return-button:active {
+  transform: translateY(0); /* Retour à la position initiale */
+}
+
 /* Hero Section */
 .hero-section {
   position: relative;
