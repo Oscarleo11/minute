@@ -30,6 +30,15 @@ const LoanForm = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  const formatCurrency = (value: string) => {
+    if (!value) return '';
+    return `$${value}`;
+  };
+
+  const parseCurrency = (value: string) => {
+    return value.replace(/\$/g, '');
+  };
+
   const handleSubmit = (e: {
     currentTarget: any; preventDefault: () => void; 
 }) => {
@@ -82,10 +91,13 @@ const LoanForm = () => {
                     Montant ($ CAD)
                   </label>
                   <input
-                    type="number"
+                    type="text"
                     name="montant"
-                    value={formData.montant}
-                    onChange={handleChange}
+                    value={formatCurrency(formData.montant)}
+                    onChange={(e) => {
+                      const rawValue = parseCurrency(e.target.value);
+                      setFormData(prev => ({ ...prev, montant: rawValue }));
+                    }}
                     placeholder="Ex: 10000"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
                     required
@@ -95,15 +107,20 @@ const LoanForm = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Durée (mois)
                   </label>
-                  <input
-                    type="number"
+                  <select
                     name="duree"
                     value={formData.duree}
                     onChange={handleChange}
-                    placeholder="Ex: 12"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
                     required
-                  />
+                  >
+                    <option value="6">6 mois</option>
+                    <option value="12">12 mois</option>
+                    <option value="24">24 mois</option>
+                    <option value="36">36 mois</option>
+                    <option value="48">48 mois</option>
+                    <option value="60">60 mois</option>
+                  </select>
                 </div>
               </div>
             </div>
@@ -303,10 +320,13 @@ const LoanForm = () => {
                     Revenu mensuel ($ CAD)
                   </label>
                   <input
-                    type="number"
+                    type="text"
                     name="revenuMensuel"
-                    value={formData.revenuMensuel}
-                    onChange={handleChange}
+                    value={formatCurrency(formData.revenuMensuel)}
+                    onChange={(e) => {
+                      const rawValue = parseCurrency(e.target.value);
+                      setFormData(prev => ({ ...prev, revenuMensuel: rawValue }));
+                    }}
                     placeholder="Ex: 3000"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
                     required
