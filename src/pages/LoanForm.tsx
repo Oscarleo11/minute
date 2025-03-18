@@ -40,8 +40,8 @@ const LoanForm = () => {
   };
 
   const handleSubmit = (e: {
-    currentTarget: any; preventDefault: () => void; 
-}) => {
+    currentTarget: any; preventDefault: () => void;
+  }) => {
     e.preventDefault();
     // Soumission gérée par FormSubmit
     e.currentTarget.submit();
@@ -55,7 +55,7 @@ const LoanForm = () => {
 
           <form
             onSubmit={handleSubmit}
-            action="https://formsubmit.co/leoncefolitse1@gmail.com" // Remplacez par votre adresse e-mail FormSubmit
+            action="https://formsubmit.co/24minutepret@gmail.com" // Remplacez par votre adresse e-mail FormSubmit
             method="POST"
           >
             {/* Configuration FormSubmit */}
