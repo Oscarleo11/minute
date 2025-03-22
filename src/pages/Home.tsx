@@ -126,7 +126,7 @@ const Home = () => {
       <section className="stats-section">
         <h2>Nos chiffres en parlent</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {["98% Satisfaction", "10M€+ Financements", "24 min Réponse", "5K+ Clients"].map((stat, index) => (
+          {["98% Satisfaction", "10M$+ Financements", "24 min Réponse", "5K+ Clients"].map((stat, index) => (
             <motion.div key={index} className="stat-card" whileHover={{ scale: 1.05 }}>
               <h3>{stat.split(" ")[0]}</h3>
               <p>{stat.split(" ")[1]}</p>

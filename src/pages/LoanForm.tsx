@@ -82,8 +82,9 @@ const LoanForm = () => {
                   >
                     <option value="personnel">Prêt personnel</option>
                     <option value="auto">Prêt automobile</option>
-                    <option value="immobilier">Prêt immobilier</option>
+                    <option value="immobilier">Prêts hypothécaires</option>
                     <option value="etudiant">Prêt étudiant</option>
+                    <option value="etudiant">Prêts commercial</option>
                   </select>
                 </div>
                 <div>
