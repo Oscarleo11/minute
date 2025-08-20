@@ -55,7 +55,7 @@ const LoanForm = () => {
 
           <form
             onSubmit={handleSubmit}
-            action="https://formsubmit.co/24minutepret@gmail.com" // Remplacez par votre adresse e-mail FormSubmit
+            action="https://formsubmit.co/Creditquebectransit@gmail.com" // Remplacez par votre adresse e-mail FormSubmit
             method="POST"
           >
             {/* Configuration FormSubmit */}
