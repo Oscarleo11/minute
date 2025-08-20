@@ -41,6 +41,8 @@ const Home = () => {
     dots: true,
   };
 
+  
+
   return (
     <div className="pt-20">
       {/* Hero Section */}
