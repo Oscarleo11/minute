@@ -8,7 +8,7 @@ const AutoLoan = () => {
   const testimonials = [
     {
       name: 'Benjamin Ditch',
-      loanType: 'Prêt immobilier',
+      loanType: 'Prêt hypothécaire',
       feedback: 'Service rapide et efficace, je recommande !',
       image: 'https://randomuser.me/api/portraits/men/1.jpg'
     },
@@ -24,6 +24,31 @@ const AutoLoan = () => {
       feedback: 'Démarches simples et réponse rapide, merci !',
       image: 'https://randomuser.me/api/portraits/men/3.jpg'
     },
+    {
+      name: 'Jeremy Lacroix',
+      loanType: 'Prêt etudiant',
+      feedback: 'Démarches simples et réponse rapide, merci !',
+      image: 'https://randomuser.me/api/portraits/men/69.jpg'
+    },
+    {
+      name: 'Charle Dupont',
+      loanType: 'Prêt personnel',
+      feedback: 'Démarches simples et réponse rapide, merci !',
+      image: 'https://randomuser.me/api/portraits/men/79.jpg'
+    },
+    {
+      name: 'Antoine Martin',
+      loanType: 'Prêt auto',
+      feedback: 'Démarches simples et réponse rapide, merci !',
+      image: 'https://randomuser.me/api/portraits/men/0.jpg'
+    },
+    {
+      name: 'Julien Masso',
+      loanType: 'Prêt personnel',
+      feedback: 'Démarches simples et réponse rapide, merci !',
+      image: 'https://randomuser.me/api/portraits/men/80.jpg'
+    },
+
   ];
 
   const sliderSettings = {

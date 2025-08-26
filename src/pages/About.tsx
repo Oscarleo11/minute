@@ -6,8 +6,8 @@ const About = () => {
       {/* Hero Section */}
       <section className="relative py-20 bg-blue-900 text-white ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold mb-6">À propos de 24min prêt</h1>
+          <div className="text-center bg-image">
+            <h1 className="text-4xl font-bold mb-6">À propos de Crédit transit Québec</h1>
             <p className="text-xl max-w-3xl mx-auto">
               Depuis plus de 10 ans, nous aidons les Québécois à obtenir le financement 
               dont ils ont besoin rapidement, peu importe leur situation financière.

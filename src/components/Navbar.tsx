@@ -12,15 +12,15 @@ const Navbar = () => {
           <div className="flex items-center">
             {/* Ajout du logo avec filtre pour changer la couleur en blanc */}
             <Link to="/" className="flex items-center space-x-2">
-              <img 
-                src="https://raw.githubusercontent.com/Oscarleo11/Network-image/refs/heads/main/24-minutes-pret.png" 
+              <img
+                src="https://github.com/Oscarleo11/Network-image/blob/main/nice-removebg-preview.png?raw=true"
                 alt="Logo"
-                className="h-12 md:h-16 w-auto"  // Ajuste la taille du logo pour les petits écrans
+                className="h-20 md:h-15 w-50"  // Ajuste la taille du logo pour les petits écrans
                 style={{ filter: 'invert(1)' }} // Inverse les couleurs pour un logo blanc
               />
             </Link>
           </div>
-          
+
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               <Link to="/" className="hover:bg-blue-800 px-3 py-2 rounded-md">Accueil</Link>
@@ -30,7 +30,7 @@ const Navbar = () => {
               <Link to="/formulaire" className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md">Demande de prêt</Link>
             </div>
           </div>
-          
+
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}

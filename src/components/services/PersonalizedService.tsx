@@ -6,37 +6,61 @@ import { motion } from 'framer-motion';
 
 const PersonalizedService = () => {
 
-    const testimonials = [
-        {
-            name: 'Benjamin Ditch',
-            loanType: 'Prêt immobilier',
-            feedback: 'Service rapide et efficace, je recommande !',
-            image: 'https://randomuser.me/api/portraits/men/1.jpg'
-        },
-        {
-            name: 'Corinne Morel',
-            loanType: 'Investissement',
-            feedback: 'Expérience parfaite, très satisfait du service.',
-            image: 'https://randomuser.me/api/portraits/women/2.jpg'
-        },
-        {
-            name: 'Bertrand Lazure',
-            loanType: 'Prêt auto',
-            feedback: 'Démarches simples et réponse rapide, merci !',
-            image: 'https://randomuser.me/api/portraits/men/3.jpg'
-        },
-    ];
+  const testimonials = [
+    {
+      name: 'Benjamin Ditch',
+      loanType: 'Prêt hypothécaire',
+      feedback: 'Service rapide et efficace, je recommande !',
+      image: 'https://randomuser.me/api/portraits/men/1.jpg'
+    },
+    {
+      name: 'Corinne Morel',
+      loanType: 'Investissement',
+      feedback: 'Expérience parfaite, très satisfait du service.',
+      image: 'https://randomuser.me/api/portraits/women/2.jpg'
+    },
+    {
+      name: 'Bertrand Lazure',
+      loanType: 'Prêt auto',
+      feedback: 'Démarches simples et réponse rapide, merci !',
+      image: 'https://randomuser.me/api/portraits/men/3.jpg'
+    },
+    {
+      name: 'Jeremy Lacroix',
+      loanType: 'Prêt etudiant',
+      feedback: 'Démarches simples et réponse rapide, merci !',
+      image: 'https://randomuser.me/api/portraits/men/69.jpg'
+    },
+    {
+      name: 'Charle Dupont',
+      loanType: 'Prêt personnel',
+      feedback: 'Démarches simples et réponse rapide, merci !',
+      image: 'https://randomuser.me/api/portraits/men/79.jpg'
+    },
+    {
+      name: 'Antoine Martin',
+      loanType: 'Prêt auto',
+      feedback: 'Démarches simples et réponse rapide, merci !',
+      image: 'https://randomuser.me/api/portraits/men/0.jpg'
+    },
+    {
+      name: 'Julien Masso',
+      loanType: 'Prêt personnel',
+      feedback: 'Démarches simples et réponse rapide, merci !',
+      image: 'https://randomuser.me/api/portraits/men/80.jpg'
+    },
 
-    const sliderSettings = {
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        arrows: false, // Pas de flèches
-        dots: true,
-    };
+  ];
+  const sliderSettings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    arrows: false, // Pas de flèches
+    dots: true,
+  };
   return (
     <div className="pt-20">
       {/* Hero Section */}
@@ -83,32 +107,32 @@ const PersonalizedService = () => {
         </div>
       </section>
 
-                  {/* Témoignages Section */}
-                  <section className="testimonials-section ">
-                <h2 className="text-3xl font-bold text-center mb-12">Ils nous font confiance</h2>
-                <Slider {...sliderSettings}>
-                    {testimonials.map((testimonial, index) => (
-                        <div key={index} className="testimonial-card">
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ duration: 1 }}
-                                className="flex flex-col items-center"
-                            >
-                                <img
-                                    src={testimonial.image}
-                                    alt={testimonial.name}
-                                    className="testimonial-image"
-                                />
-                                <blockquote className="testimonial-text">
-                                    "{testimonial.feedback}"
-                                </blockquote>
-                                <p className="testimonial-name">- {testimonial.name}</p>
-                            </motion.div>
-                        </div>
-                    ))}
-                </Slider>
-            </section>
+      {/* Témoignages Section */}
+      <section className="testimonials-section ">
+        <h2 className="text-3xl font-bold text-center mb-12">Ils nous font confiance</h2>
+        <Slider {...sliderSettings}>
+          {testimonials.map((testimonial, index) => (
+            <div key={index} className="testimonial-card">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+                className="flex flex-col items-center"
+              >
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  className="testimonial-image"
+                />
+                <blockquote className="testimonial-text">
+                  "{testimonial.feedback}"
+                </blockquote>
+                <p className="testimonial-name">- {testimonial.name}</p>
+              </motion.div>
+            </div>
+          ))}
+        </Slider>
+      </section>
     </div>
   );
 };

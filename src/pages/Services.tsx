@@ -9,7 +9,7 @@ const Services = () => {
   const testimonials = [
     {
       name: 'Benjamin Ditch',
-      loanType: 'Prêt immobilier',
+      loanType: 'Prêt hypothécaire',
       feedback: 'Service rapide et efficace, je recommande !',
       image: 'https://randomuser.me/api/portraits/men/1.jpg'
     },
@@ -25,6 +25,31 @@ const Services = () => {
       feedback: 'Démarches simples et réponse rapide, merci !',
       image: 'https://randomuser.me/api/portraits/men/3.jpg'
     },
+    {
+      name: 'Jeremy Lacroix',
+      loanType: 'Prêt etudiant',
+      feedback: 'Démarches simples et réponse rapide, merci !',
+      image: 'https://randomuser.me/api/portraits/men/69.jpg'
+    },
+    {
+      name: 'Charle Dupont',
+      loanType: 'Prêt personnel',
+      feedback: 'Démarches simples et réponse rapide, merci !',
+      image: 'https://randomuser.me/api/portraits/men/79.jpg'
+    },
+    {
+      name: 'Antoine Martin',
+      loanType: 'Prêt auto',
+      feedback: 'Démarches simples et réponse rapide, merci !',
+      image: 'https://randomuser.me/api/portraits/men/0.jpg'
+    },
+    {
+      name: 'Julien Masso',
+      loanType: 'Prêt personnel',
+      feedback: 'Démarches simples et réponse rapide, merci !',
+      image: 'https://randomuser.me/api/portraits/men/80.jpg'
+    },
+
   ];
 
   const sliderSettings = {
@@ -39,17 +64,27 @@ const Services = () => {
   };
   return (
     <div className="pt-20">
-      {/* Hero Section */}
-      <section className="relative py-20 bg-blue-900 text-white pt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section
+        className="hero-section relative py-20 bg-blue-900 text-white pt-20 
+             bg-[url('./nos-services.webp')] bg-cover bg-center bg-no-repeat"
+      >
+        {/* Overlay sombre pour lisibilité */}
+        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+
+        {/* Contenu */}
+        <div className="hero-content relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl font-bold mb-6">Nos Services</h1>
-            <p className="text-xl max-w-3xl mx-auto">
-              Des solutions de financement adaptées à votre situation et à vos besoins, en seulement 24 minutes.
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+              Nos Services
+            </h1>
+            <p className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto">
+              Des solutions de financement adaptées à votre situation et à vos besoins, en seulement 24 heures.
             </p>
           </div>
         </div>
       </section>
+
+
 
       {/* Services Grid */}
       <section className="py-16">
@@ -94,7 +129,7 @@ const Services = () => {
 
             <Link to="/services/loan-protection" className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <ShieldCheck className="h-12 w-12 text-blue-600 mb-4" />
-              <h3 className="text-xl font-semibold mb-3">Approbation en 24 minutes</h3>
+              <h3 className="text-xl font-semibold mb-3">Approbation en 24 heures</h3>
               <p className="text-gray-600">Réponse rapide pour tous types de prêts, sans attente prolongée.</p>
             </Link>
 

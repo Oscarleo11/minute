@@ -12,7 +12,7 @@ const Home = () => {
   const testimonials = [
     {
       name: 'Benjamin Ditch',
-      loanType: 'Prêt immobilier',
+      loanType: 'Prêt hypothécaire',
       feedback: 'Service rapide et efficace, je recommande !',
       image: 'https://randomuser.me/api/portraits/men/1.jpg'
     },
@@ -28,6 +28,31 @@ const Home = () => {
       feedback: 'Démarches simples et réponse rapide, merci !',
       image: 'https://randomuser.me/api/portraits/men/3.jpg'
     },
+    {
+      name: 'Jeremy Lacroix',
+      loanType: 'Prêt etudiant',
+      feedback: 'Démarches simples et réponse rapide, merci !',
+      image: 'https://randomuser.me/api/portraits/men/69.jpg'
+    },
+    {
+      name: 'Charle Dupont',
+      loanType: 'Prêt personnel',
+      feedback: 'Démarches simples et réponse rapide, merci !',
+      image: 'https://randomuser.me/api/portraits/men/79.jpg'
+    },
+    {
+      name: 'Antoine Martin',
+      loanType: 'Prêt auto',
+      feedback: 'Démarches simples et réponse rapide, merci !',
+      image: 'https://randomuser.me/api/portraits/men/0.jpg'
+    },
+    {
+      name: 'Julien Masso',
+      loanType: 'Prêt personnel',
+      feedback: 'Démarches simples et réponse rapide, merci !',
+      image: 'https://randomuser.me/api/portraits/men/80.jpg'
+    },
+
   ];
 
   const sliderSettings = {
@@ -48,7 +73,7 @@ const Home = () => {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Des prêts adaptés à vos besoins</h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">Des crédits adaptés à vos besoins</h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl">Obtenez un financement rapide et personnalisé en quelques clics.</p>
           <Link to="/formulaire" className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
             Faites une demande <ArrowRight className="ml-2 h-5 w-5" />
@@ -58,13 +83,13 @@ const Home = () => {
 
       {/* Features Section */}
       <section className="features-section">
-        <h2>Pourquoi choisir 24min prêt?</h2>
+        <h2>Pourquoi choisir Crédit transit Québec?</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
               icon: Clock,
-              title: "Réponse en 24 minutes",
-              description: "Notre processus d'approbation rapide vous donne une réponse en seulement 24 minutes."
+              title: "Réponse en 24 heures",
+              description: "Notre processus d'approbation rapide vous donne une réponse en seulement 24 heures."
             },
             {
               icon: DollarSign,
@@ -108,7 +133,7 @@ const Home = () => {
                 // icon: Plane,
                 image: "https://th.bing.com/th/id/OIP.nXuKgjE06F9XGQYmyIGCSwHaDp?rs=1&pid=ImgDetMain",
                 title: "Notre Histoire",
-                description: "Fondée en 2015, 24min prêt est devenue une référence dans le financement rapide au Québec."
+                description: "Fondée en 2015, Crédit transit Québec est devenue une référence dans le financement rapide au Québec."
               }
             ].map((item, index) => (
               <motion.div key={index} className="bg-gray-50 p-6 rounded-lg shadow-md transform hover:scale-105 transition-transform" whileHover={{ scale: 1.05 }}>
@@ -157,7 +182,7 @@ const Home = () => {
               },
               {
                 step: "3",
-                title: "Approbation en 24 minutes",
+                title: "Approbation en 24 heures",
                 description: "Recevez votre approbation et les conditions de financement."
               },
               {
@@ -225,7 +250,7 @@ const Home = () => {
             {
               icon: History,
               title: "Notre Histoire",
-              description: "Fondée en 2015, 24min prêt est devenue une référence dans le financement rapide au Québec."
+              description: "Fondée en 2015, Crédit transit Québec est devenue une référence dans le financement rapide au Québec."
             }
           ].map((item, index) => (
             <motion.div key={index} className="mission-card" whileHover={{ scale: 1.05 }}>

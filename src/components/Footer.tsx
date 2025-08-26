@@ -9,14 +9,14 @@ const Footer = () => {
           <div>
             <Link to="/" className="flex items-center space-x-2">
               <img
-                src="https://raw.githubusercontent.com/Oscarleo11/Network-image/refs/heads/main/24-minutes-pret.png"
+                src="https://github.com/Oscarleo11/Network-image/blob/main/nice-removebg-preview.png?raw=true"
                 alt="Logo"
-                className="h-12 md:h-16 w-auto"  // Ajuste la taille du logo pour les petits écrans
+                className="h-50 md:h-30 w-50"  // Ajuste la taille du logo pour les petits écrans
                 style={{ filter: 'invert(1)' }} // Inverse les couleurs pour un logo blanc
               />
             </Link>
             <p className="text-gray-300">
-              Solutions de financement personnalisées pour tous vos besoins, en seulement 24 minutes.
+              Solutions de financement personnalisées pour tous vos besoins, en seulement 24 heures.
             </p>
           </div>
 
@@ -63,7 +63,7 @@ const Footer = () => {
 
         <div className="mt-8 pt-8 border-t border-gray-700 text-center">
           <p className="text-gray-300">
-            © {new Date().getFullYear()} 24min prêt. Tous droits réservés.
+            © {new Date().getFullYear()} Crédit transit Québec. Tous droits réservés.
           </p>
         </div>
       </div>
