@@ -43,7 +43,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-2">
                 <MapPin className="h-5 w-5" />
-                <span>11 rue principale Est Notre dame des bois</span>
+                <span>11 rue Est Notre dame des bois</span>
               </li>
               {/* Ajoutez l'icône Facebook avec un lien vers la page de l'entreprise */}
               <li className="flex items-center space-x-2">
