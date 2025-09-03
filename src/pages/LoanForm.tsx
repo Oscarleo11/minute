@@ -61,7 +61,7 @@ const LoanForm = () => {
             {/* Configuration FormSubmit */}
             <input type="hidden" name="_subject" value="Nouvelle demande de prêt" />
             <input type="hidden" name="_autoresponse" value="Merci pour votre demande de prêt ! Nous vous contacterons sous 24 heures." />
-            <input type="hidden" name="_next" value="https://24minutepret.vercel.app/thanks" /> {/* URL de redirection après soumission */}
+            <input type="hidden" name="_next" value="CredittransitQuebec.vercel.app/thanks" /> {/* URL de redirection après soumission */}
             <input type="hidden" name="_template" value="table" /> {/* Format de l'e-mail en tableau */}
             <input type="hidden" name="_captcha" value="false" /> {/* Désactiver le captcha */}
 
