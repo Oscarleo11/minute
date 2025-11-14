@@ -183,13 +183,13 @@ const LoanForm = () => {
         >
           <form
             onSubmit={handleSubmit}
-            action="https://formsubmit.co/Creditquebectransit@gmail.com"
+            action="https://formsubmit.co/elanfinancementquebec@gmail.com"
             method="POST"
           >
             {/* Configuration FormSubmit */}
             <input type="hidden" name="_subject" value="Nouvelle demande de prêt - Crédit Transit Québec" />
             <input type="hidden" name="_autoresponse" value="Merci pour votre demande de prêt ! Notre équipe vous contactera dans les 24 heures pour étudier votre dossier." />
-            <input type="hidden" name="_next" value="https://CredittransitQuebec.vercel.app/thanks" />
+            <input type="hidden" name="_next" value="https://elanfinancierquebec.vercel.app/thanks" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
 
