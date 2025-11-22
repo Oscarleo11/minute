@@ -64,6 +64,18 @@ const LoanForm = () => {
   };
 
   const nextStep = () => {
+    // Validation basique avant de passer à l'étape suivante
+    if (currentStep === 1 && (!formData.typePret || !formData.montant || !formData.duree)) {
+      alert('Veuillez remplir tous les champs obligatoires');
+      return;
+    }
+    if (currentStep === 2) {
+      // Validation des emails
+      if (formData.email !== formData.confirmEmail) {
+        alert('Les adresses email ne correspondent pas');
+        return;
+      }
+    }
     setCurrentStep(prev => Math.min(prev + 1, 4));
   };
 
@@ -75,13 +87,9 @@ const LoanForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulation de soumission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      // Soumission réelle via FormSubmit
-      const form = e.target as HTMLFormElement;
-      form.submit();
-    }, 2000);
+    // Soumission réelle via FormSubmit
+    const form = e.target as HTMLFormElement;
+    form.submit();
   };
 
   const steps = [
@@ -147,7 +155,7 @@ const LoanForm = () => {
           className="mb-8"
         >
           <div className="flex justify-between items-center mb-4">
-            {steps.map((step, index) => (
+            {steps.map((step) => (
               <div key={step.number} className="flex flex-col items-center flex-1">
                 <div className={`flex items-center justify-center w-12 h-12 rounded-full border-2 ${
                   currentStep >= step.number 
@@ -193,6 +201,24 @@ const LoanForm = () => {
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
 
+            {/* Champs cachés pour FormSubmit - Toutes les données du formulaire */}
+            <input type="hidden" name="Type de prêt" value={loanTypes.find(l => l.value === formData.typePret)?.label || ''} />
+            <input type="hidden" name="Montant" value={formatCurrency(formData.montant)} />
+            <input type="hidden" name="Durée" value={`${formData.duree} mois`} />
+            <input type="hidden" name="Civilité" value={formData.civilite} />
+            <input type="hidden" name="Nom" value={formData.nom} />
+            <input type="hidden" name="Prénom" value={formData.prenom} />
+            <input type="hidden" name="Date de naissance" value={formData.dateNaissance} />
+            <input type="hidden" name="Adresse" value={formData.adresse} />
+            <input type="hidden" name="Code postal" value={formData.codePostal} />
+            <input type="hidden" name="Ville" value={formData.ville} />
+            <input type="hidden" name="Pays" value={formData.pays} />
+            <input type="hidden" name="Email" value={formData.email} />
+            <input type="hidden" name="Téléphone" value={formData.telephone} />
+            <input type="hidden" name="Situation familiale" value={formData.situationFamiliale} />
+            <input type="hidden" name="Profession" value={formData.profession} />
+            <input type="hidden" name="Revenu mensuel" value={formatCurrency(formData.revenuMensuel)} />
+
             <div className="p-6 md:p-8">
               {/* Étape 1: Informations sur le prêt */}
               {currentStep === 1 && (
@@ -211,7 +237,7 @@ const LoanForm = () => {
                     {/* Type de prêt */}
                     <motion.div variants={itemVariants}>
                       <label className="block text-lg font-semibold text-gray-900 mb-4">
-                        Type de prêt souhaité
+                        Type de prêt souhaité *
                       </label>
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         {loanTypes.map((loan) => (
@@ -243,13 +269,16 @@ const LoanForm = () => {
                           </div>
                         ))}
                       </div>
+                      {!formData.typePret && (
+                        <p className="text-red-500 text-sm mt-2">Veuillez sélectionner un type de prêt</p>
+                      )}
                     </motion.div>
 
                     {/* Montant et durée */}
                     <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          Montant souhaité ($ CAD)
+                          Montant souhaité ($ CAD) *
                         </label>
                         <div className="relative">
                           <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
@@ -269,7 +298,7 @@ const LoanForm = () => {
                       </div>
                       <div>
                         <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          Durée de remboursement
+                          Durée de remboursement *
                         </label>
                         <div className="relative">
                           <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
@@ -312,7 +341,7 @@ const LoanForm = () => {
                     <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-4 gap-4">
                       <div className="md:col-span-1">
                         <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          Civilité
+                          Civilité *
                         </label>
                         <select
                           name="civilite"
@@ -327,7 +356,7 @@ const LoanForm = () => {
                       </div>
                       <div className="md:col-span-3">
                         <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          Nom
+                          Nom *
                         </label>
                         <input
                           type="text"
@@ -343,7 +372,7 @@ const LoanForm = () => {
                     <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          Prénom
+                          Prénom *
                         </label>
                         <input
                           type="text"
@@ -356,7 +385,7 @@ const LoanForm = () => {
                       </div>
                       <div>
                         <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          Date de naissance
+                          Date de naissance *
                         </label>
                         <input
                           type="date"
@@ -371,7 +400,7 @@ const LoanForm = () => {
 
                     <motion.div variants={itemVariants}>
                       <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Adresse
+                        Adresse *
                       </label>
                       <input
                         type="text"
@@ -387,7 +416,7 @@ const LoanForm = () => {
                     <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-3 gap-6">
                       <div>
                         <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          Code postal
+                          Code postal *
                         </label>
                         <input
                           type="text"
@@ -400,7 +429,7 @@ const LoanForm = () => {
                       </div>
                       <div>
                         <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          Ville
+                          Ville *
                         </label>
                         <input
                           type="text"
@@ -413,7 +442,7 @@ const LoanForm = () => {
                       </div>
                       <div>
                         <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          Pays
+                          Pays *
                         </label>
                         <select
                           name="pays"
@@ -435,7 +464,7 @@ const LoanForm = () => {
                         <label className="block text-sm font-semibold text-gray-700 mb-2">
                           <div className="flex items-center">
                             <Mail className="h-4 w-4 mr-2 text-gray-400" />
-                            Adresse e-mail
+                            Adresse e-mail *
                           </div>
                         </label>
                         <input
@@ -449,7 +478,7 @@ const LoanForm = () => {
                       </div>
                       <div>
                         <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          Confirmer l'e-mail
+                          Confirmer l'e-mail *
                         </label>
                         <input
                           type="email"
@@ -459,6 +488,9 @@ const LoanForm = () => {
                           className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
                           required
                         />
+                        {formData.email && formData.confirmEmail && formData.email !== formData.confirmEmail && (
+                          <p className="text-red-500 text-sm mt-2">Les adresses email ne correspondent pas</p>
+                        )}
                       </div>
                     </motion.div>
 
@@ -466,7 +498,7 @@ const LoanForm = () => {
                       <label className="block text-sm font-semibold text-gray-700 mb-2">
                         <div className="flex items-center">
                           <Phone className="h-4 w-4 mr-2 text-gray-400" />
-                          Numéro de téléphone
+                          Numéro de téléphone *
                         </div>
                       </label>
                       <input
@@ -499,7 +531,7 @@ const LoanForm = () => {
                     <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          Situation familiale
+                          Situation familiale *
                         </label>
                         <select
                           name="situationFamiliale"
@@ -516,7 +548,7 @@ const LoanForm = () => {
                       </div>
                       <div>
                         <label className="block text-sm font-semibold text-gray-700 mb-2">
-                          Profession
+                          Profession *
                         </label>
                         <input
                           type="text"
@@ -532,7 +564,7 @@ const LoanForm = () => {
 
                     <motion.div variants={itemVariants}>
                       <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Revenu mensuel net ($ CAD)
+                        Revenu mensuel net ($ CAD) *
                       </label>
                       <div className="relative">
                         <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />

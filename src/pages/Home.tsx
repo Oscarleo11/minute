@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, DollarSign, Users, Award, History, Clock, Car, Plane, HelpCircle } from 'lucide-react';
+import { ArrowRight, DollarSign, Users, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';

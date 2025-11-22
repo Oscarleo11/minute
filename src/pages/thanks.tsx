@@ -7,7 +7,6 @@ import {
   Clock, 
   Phone, 
   Users,
-  ArrowRight,
   Shield,
   Calendar
 } from 'lucide-react';
