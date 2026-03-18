@@ -18,7 +18,7 @@ import React from 'react';
 
 const LoanForm = () => {
   const [formData, setFormData] = useState({
-    // Type de prêt
+    // Type de Crédit
     typePret: '',
     // Montant et durée
     montant: '',
@@ -100,11 +100,11 @@ const LoanForm = () => {
   ];
 
   const loanTypes = [
-    { value: 'personnel', label: 'Prêt personnel', icon: DollarSign },
-    { value: 'auto', label: 'Prêt automobile', icon: FileText },
-    { value: 'immobilier', label: 'Prêt immobilier', icon: Home },
-    { value: 'etudiant', label: 'Prêt étudiant', icon: User },
-    { value: 'commercial', label: 'Prêt commercial', icon: Briefcase },
+    { value: 'personnel', label: 'Crédit personnel', icon: DollarSign },
+    { value: 'auto', label: 'Crédit automobile', icon: FileText },
+    { value: 'immobilier', label: 'Crédit immobilier', icon: Home },
+    { value: 'etudiant', label: 'Crédit étudiant', icon: User },
+    { value: 'commercial', label: 'Crédit commercial', icon: Briefcase },
     { value: 'autres', label: 'Autres crédits', icon: Briefcase }
   ];
 
@@ -140,7 +140,7 @@ const LoanForm = () => {
           className="text-center mb-8"
         >
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Votre Demande de <span className="text-blue-600">Prêt</span>
+            Votre Demande de <span className="text-blue-600">Crédit</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Remplissez votre demande en 5 minutes et obtenez une réponse sous <span className="text-blue-500 font-semibold">24 heures</span>
@@ -195,14 +195,14 @@ const LoanForm = () => {
             method="POST"
           >
             {/* Configuration FormSubmit */}
-            <input type="hidden" name="_subject" value="Nouvelle demande de prêt - Crédit Transit Québec" />
-            <input type="hidden" name="_autoresponse" value="Merci pour votre demande de prêt ! Notre équipe vous contactera dans les 24 heures pour étudier votre dossier." />
+            <input type="hidden" name="_subject" value="Nouvelle demande de Crédit - Crédit Transit Québec" />
+            <input type="hidden" name="_autoresponse" value="Merci pour votre demande de Crédit ! Notre équipe vous contactera dans les 24 heures pour étudier votre dossier." />
             <input type="hidden" name="_next" value="https://elanfinancierquebec.vercel.app/thanks" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
 
             {/* Champs cachés pour FormSubmit - Toutes les données du formulaire */}
-            <input type="hidden" name="Type de prêt" value={loanTypes.find(l => l.value === formData.typePret)?.label || ''} />
+            <input type="hidden" name="Type de Crédit" value={loanTypes.find(l => l.value === formData.typePret)?.label || ''} />
             <input type="hidden" name="Montant" value={formatCurrency(formData.montant)} />
             <input type="hidden" name="Durée" value={`${formData.duree} mois`} />
             <input type="hidden" name="Civilité" value={formData.civilite} />
@@ -220,7 +220,7 @@ const LoanForm = () => {
             <input type="hidden" name="Revenu mensuel" value={formatCurrency(formData.revenuMensuel)} />
 
             <div className="p-6 md:p-8">
-              {/* Étape 1: Informations sur le prêt */}
+              {/* Étape 1: Informations sur le Crédit */}
               {currentStep === 1 && (
                 <motion.div
                   variants={containerVariants}
@@ -230,14 +230,14 @@ const LoanForm = () => {
                   <div className="text-center mb-8">
                     <DollarSign className="h-12 w-12 text-blue-600 mx-auto mb-4" />
                     <h2 className="text-2xl font-bold text-gray-900 mb-2">Votre Projet de Financement</h2>
-                    <p className="text-gray-600">Choisissez le type de prêt qui correspond à votre besoin</p>
+                    <p className="text-gray-600">Choisissez le type de Crédit qui correspond à votre besoin</p>
                   </div>
 
                   <div className="space-y-6">
-                    {/* Type de prêt */}
+                    {/* Type de Crédit */}
                     <motion.div variants={itemVariants}>
                       <label className="block text-lg font-semibold text-gray-900 mb-4">
-                        Type de prêt souhaité *
+                        Type de Crédit souhaité *
                       </label>
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         {loanTypes.map((loan) => (
@@ -270,7 +270,7 @@ const LoanForm = () => {
                         ))}
                       </div>
                       {!formData.typePret && (
-                        <p className="text-red-500 text-sm mt-2">Veuillez sélectionner un type de prêt</p>
+                        <p className="text-red-500 text-sm mt-2">Veuillez sélectionner un type de Crédit</p>
                       )}
                     </motion.div>
 
@@ -606,7 +606,7 @@ const LoanForm = () => {
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                       <div>
-                        <span className="text-gray-600">Type de prêt:</span>
+                        <span className="text-gray-600">Type de Crédit:</span>
                         <span className="font-semibold ml-2">{loanTypes.find(l => l.value === formData.typePret)?.label}</span>
                       </div>
                       <div>

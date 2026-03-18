@@ -11,7 +11,7 @@ const Home = () => {
   const testimonials = [
     {
       name: 'Benjamin Ditch',
-      loanType: 'Prêt hypothécaire',
+      loanType: 'Crédit hypothécaire',
       feedback: 'Service rapide et efficace, je recommande !',
       image: 'https://randomuser.me/api/portraits/men/1.jpg'
     },
@@ -23,19 +23,19 @@ const Home = () => {
     },
     {
       name: 'Bertrand Lazure',
-      loanType: 'Prêt auto',
+      loanType: 'Crédit auto',
       feedback: 'Démarches simples et réponse rapide, merci !',
       image: 'https://randomuser.me/api/portraits/men/3.jpg'
     },
     {
       name: 'Jeremy Lacroix',
-      loanType: 'Prêt étudiant',
+      loanType: 'Crédit étudiant',
       feedback: 'Démarches simples et réponse rapide, merci !',
       image: 'https://randomuser.me/api/portraits/men/69.jpg'
     },
     {
       name: 'Charle Dupont',
-      loanType: 'Prêt personnel',
+      loanType: 'Crédit personnel',
       feedback: 'Démarches simples et réponse rapide, merci !',
       image: 'https://randomuser.me/api/portraits/men/79.jpg'
     }
@@ -143,7 +143,7 @@ const Home = () => {
               {
                 icon: DollarSign,
                 title: "Taux compétitifs",
-                description: "Nous négocions avec plusieurs prêteurs pour vous obtenir le meilleur taux possible."
+                description: "Nous négocions avec plusieurs Créditeurs pour vous obtenir le meilleur taux possible."
               },
               {
                 icon: Users,
@@ -266,7 +266,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Offres de Prêts Section */}
+      {/* Offres de Crédits Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -276,19 +276,19 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Nos Offres de Prêts</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Nos Offres de Crédits</h2>
             <p className="text-xl text-gray-600">Des solutions adaptées à chaque projet</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "Prêt personnel",
+                title: "Crédit personnel",
                 image: "https://neotralo.ch/wp-content/uploads/2019/12/7.jpg",
                 description: "Financez vos projets personnels avec des conditions avantageuses"
               },
               {
-                title: "Prêt immobilier",
+                title: "Crédit immobilier",
                 image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFf4a9cF_HQxo1baovhF-N1k9yL0Op1lSqSQ&s",
                 description: "Réalisez vos projets immobiliers avec notre accompagnement expert"
               },

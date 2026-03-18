@@ -68,7 +68,7 @@ const Navbar = () => {
                 to="/formulaire"
                 className="ml-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 px-6 py-2.5 rounded-lg font-semibold text-white shadow-lg transition-all duration-200 transform hover:scale-105 hover:shadow-xl"
               >
-                Demande de prêt
+                Demande de Crédit
               </Link>
             </div>
           </div>
@@ -115,7 +115,7 @@ const Navbar = () => {
                 className="block w-full text-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 px-4 py-3.5 rounded-xl font-semibold text-white shadow-lg transition-all duration-200"
                 onClick={() => setIsOpen(false)}
               >
-                Demande de prêt
+                Demande de Crédit
               </Link>
             </div>
           </div>
