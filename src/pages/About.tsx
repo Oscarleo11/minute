@@ -98,7 +98,7 @@ const About = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              À Propos de <span className="text-blue-400">Élan Financier Québec</span>
+              À Propos de <span className="text-blue-400">Solution crédit rapide Québec</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed">
               Depuis 2015, nous aidons les Québécois à concrétiser leurs projets grâce à des solutions 
@@ -183,7 +183,7 @@ const About = () => {
               {
                 icon: History,
                 title: "Notre Histoire",
-                description: "Fondée en 2015, Crédit Transit Québec est devenue une référence dans le financement rapide au Québec.",
+                description: "Fondée en 2015, Solution crédit rapide Québec est devenue une référence dans le financement rapide au Québec.",
                 features: ["Expertise depuis 2015", "Croissance continue", "Innovation permanente"]
               }
             ].map((item, index) => (

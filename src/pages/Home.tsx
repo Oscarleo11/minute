@@ -120,7 +120,7 @@ const Home = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Pourquoi choisir <span className="text-blue-600">Crédit transit Québec</span>?
+              Pourquoi choisir <span className="text-blue-600">Solution crédit rapide Québec</span>?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Découvrez les avantages qui font de nous votre partenaire de confiance

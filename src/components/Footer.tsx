@@ -73,7 +73,7 @@ const Footer = () => {
             <Link to="/" className="inline-block mb-6">
               <img
                 src="https://github.com/Oscarleo11/Network-image/blob/main/elan-finance.png?raw=true"
-                alt="Crédit transit Québec - Votre partenaire financier"
+                alt="Solution crédit rapide Québec - Votre partenaire financier"
                 className="h-16 w-auto"
               />
             </Link>
@@ -145,16 +145,16 @@ const Footer = () => {
             </h3>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
-                {/* <Phone className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" /> */}
-                {/* <div>
+                { <Phone className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" /> }
+                { <div>
                   <p className="font-medium">Téléphone</p>
                   <a 
-                    href="tel:+18198036056" 
+                    href="tel:++1(587)-885-6010" 
                     className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
                   >
                     +1 819-803-6056
                   </a>
-                </div> */}
+                </div> }
               </li>
               
               <li className="flex items-start space-x-3">
