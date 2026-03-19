@@ -197,7 +197,7 @@ const LoanForm = () => {
             {/* Configuration FormSubmit */}
             <input type="hidden" name="_subject" value="Nouvelle demande de Crédit - Solution crédit rapide Québec" />
             <input type="hidden" name="_autoresponse" value="Merci pour votre demande de Crédit ! Notre équipe vous contactera dans les 24 heures pour étudier votre dossier." />
-            <input type="hidden" name="_next" value="https://elanfinancierquebec.vercel.app/thanks" />
+            <input type="hidden" name="_next" value="https://solutioncreditrapidequebec.vercel.app/thanks" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
 
