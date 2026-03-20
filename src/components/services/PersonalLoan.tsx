@@ -64,11 +64,11 @@ const PersonalLoan = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative py-20 bg-blue-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <DollarSign className="h-16 w-16 mx-auto mb-4" />
-            <h1 className="text-4xl font-bold mb-6">Prêts personnels</h1>
+            <h1 className="text-4xl font-bold mb-6 tracking-tight">Prêts personnels</h1>
             <p className="text-xl max-w-3xl mx-auto">
               Solutions adaptées à votre budget pour tous vos projets personnels.
             </p>
@@ -78,7 +78,7 @@ const PersonalLoan = () => {
 
       {/* Détails du service */}
       <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <h2 className="text-2xl font-bold mb-4">Pourquoi choisir nos prêts personnels ?</h2>

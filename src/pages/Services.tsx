@@ -47,23 +47,26 @@ const Services = () => {
   const services = [
     {
       icon: Home,
-      title: "Prêts hypothécaires",
+      title: "Crédits hypothécaires",
       description: "Solutions de financement pour l'achat, le refinancement ou la rénovation de votre propriété.",
       features: ["Taux compétitifs", "Termes flexibles", "Aide à l'approbation"],
+      path: "/services/mortgage-loan",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
     },
     {
       icon: Car,
-      title: "Prêts automobiles",
+      title: "Crédits automobiles",
       description: "Financement pour véhicules neufs et d'occasion avec des taux compétitifs.",
       features: ["Neuf et occasion", "Financement 100%", "Délai rapide"],
+      path: "/services/auto-loan",
       image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
     },
     {
       icon: Briefcase,
-      title: "Prêts commerciaux",
+      title: "Crédits commerciaux",
       description: "Financement pour démarrer ou développer votre entreprise.",
       features: ["Capital démarrage", "Équipements", "Fonds de roulement"],
+      path: "/services/business-loan",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
     },
     {
@@ -71,20 +74,23 @@ const Services = () => {
       title: "Prêt étudiant",
       description: "Des solutions de financement pour soutenir vos études et votre avenir.",
       features: ["Frais scolaires", "Matériel pédagogique", "Logement étudiant"],
+      path: "/services/student-loan",
       image: "https://images.unsplash.com/photo-1512879336734-d372f3f6402d?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       icon: DollarSign,
-      title: "Prêts personnels",
+      title: "Crédits personnels",
       description: "Solutions adaptées à votre budget pour tous vos projets personnels.",
       features: ["Projets divers", "Dépenses imprévues", "Consolidation dette"],
+      path: "/services/personal-loan",
       image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
     },
     {
       icon: ShieldCheck,
       title: "Protection garantie",
-      description: "Garanties et protections supplémentaires disponibles pour vos prêts.",
+      description: "Garanties et protections supplémentaires disponibles pour vos Crédits.",
       features: ["Assurance invalidité", "Protection emploi", "Couverture décès"],
+      path: "/services/loan-protection",
       image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
     }
   ];
@@ -140,22 +146,22 @@ const Services = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white overflow-hidden">
+      <section className="relative min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
           style={{
             backgroundImage: "url('https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')"
           }}
         ></div>
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/30"></div>
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
               Nos <span className="text-blue-400">Services</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -180,7 +186,7 @@ const Services = () => {
 
       {/* Services Grid */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -207,7 +213,7 @@ const Services = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group"
+                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-100"
                 whileHover={{ y: -5 }}
               >
                 <div className="flex flex-col md:flex-row">
@@ -217,7 +223,7 @@ const Services = () => {
                       alt={service.title}
                       className="w-full h-48 md:h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-blue-600/20 group-hover:bg-blue-600/10 transition-colors duration-300"></div>
+                    <div className="absolute inset-0 bg-blue-600/10 group-hover:bg-blue-600/5 transition-colors duration-300"></div>
                   </div>
                   
                   <div className="md:w-3/5 p-6">
@@ -240,13 +246,22 @@ const Services = () => {
                       ))}
                     </div>
                     
-                    <Link
-                      to="/formulaire"
-                      className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-200 group/link"
-                    >
-                      Demander ce service
-                      <ArrowRight className="ml-2 h-4 w-4 transform group-hover/link:translate-x-1 transition-transform duration-200" />
-                    </Link>
+                    <div className="flex flex-wrap gap-3">
+                      <Link
+                        to={service.path}
+                        className="inline-flex items-center border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-4 py-2 rounded-lg font-semibold transition-all duration-200"
+                      >
+                        Voir les détails
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                      <Link
+                        to="/formulaire"
+                        className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-200 group/link"
+                      >
+                        Demander ce service
+                        <ArrowRight className="ml-2 h-4 w-4 transform group-hover/link:translate-x-1 transition-transform duration-200" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -257,7 +272,7 @@ const Services = () => {
 
       {/* Avantages Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -278,7 +293,7 @@ const Services = () => {
               {
                 icon: ShieldCheck,
                 title: "Approbation en 24h",
-                description: "Réponse rapide pour tous types de prêts, sans attente prolongée."
+                description: "Réponse rapide pour tous types de Crédits, sans attente prolongée."
               },
               {
                 icon: HeartHandshake,
@@ -312,7 +327,7 @@ const Services = () => {
 
       {/* Process Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -338,9 +353,6 @@ const Services = () => {
                   <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white/30 transition-colors duration-300 backdrop-blur-sm">
                     <span className="text-2xl">{step.icon}</span>
                   </div>
-                  {index < 3 && (
-                    <div className="hidden md:block absolute top-10 left-1/2 w-full h-0.5 bg-white/30 -z-10"></div>
-                  )}
                 </div>
                 <div className="text-white/90 text-sm font-semibold mb-2">Étape {step.step}</div>
                 <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
@@ -374,7 +386,7 @@ const Services = () => {
 
       {/* Témoignages Section */}
       <section className="py-20 bg-gray-900 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -65,11 +65,11 @@ const AutoLoan = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative py-20 bg-blue-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <Car className="h-16 w-16 mx-auto mb-4" />
-            <h1 className="text-4xl font-bold mb-6">Prêts automobiles</h1>
+            <h1 className="text-4xl font-bold mb-6 tracking-tight">Prêts automobiles</h1>
             <p className="text-xl max-w-3xl mx-auto">
               Financement pour véhicules neufs et d'occasion avec des taux compétitifs.
             </p>
@@ -79,7 +79,7 @@ const AutoLoan = () => {
 
       {/* Détails du service */}
       <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <h2 className="text-2xl font-bold mb-4">Pourquoi choisir nos prêts automobiles ?</h2>
@@ -98,7 +98,7 @@ const AutoLoan = () => {
             </div>
             <div>
               <img
-                src="https://i.pinimg.com/736x/97/cd/4b/97cd4bc78da1eedb7196744a4b49e5af.jpg" // Remplacez par une image appropriée
+                src="https://i.pinimg.com/736x/97/cd/4b/97cd4bc78da1eedb7196744a4b49e5af.jpg"
                 alt="Prêts automobiles"
                 className="w-full h-auto rounded-lg"
               />

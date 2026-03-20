@@ -30,7 +30,7 @@ const Footer = () => {
     <footer className="bg-gray-900 text-white">
       {/* Section CTA avant le footer */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-700 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -60,7 +60,7 @@ const Footer = () => {
       </div>
 
       {/* Contenu principal du footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <motion.div
           className="grid grid-cols-1 lg:grid-cols-4 gap-8"
           variants={footerVariants}
@@ -122,17 +122,22 @@ const Footer = () => {
             </h3>
             <ul className="space-y-3">
               {[
-                'Prêt personnel',
-                'Prêt immobilier',
-                'Crédit auto',
-                'Financement projet',
-                'Rachat de crédit'
+                { label: 'Crédits personnels', path: '/services/personal-loan' },
+                { label: 'Crédits hypothécaires', path: '/services/mortgage-loan' },
+                { label: 'Crédits automobiles', path: '/services/auto-loan' },
+                { label: 'Crédits commerciaux', path: '/services/business-loan' },
+                { label: 'Protection garantie', path: '/services/loan-protection' },
+                { label: 'Service personnalisé', path: '/services/personalized-service' },
+                { label: 'Prêt étudiant', path: '/services/student-loan' },
               ].map((service) => (
-                <li key={service}>
-                  <span className="text-gray-300 hover:text-blue-400 transition-colors duration-200 cursor-default flex items-center">
+                <li key={service.path}>
+                  <Link
+                    to={service.path}
+                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center"
+                  >
                     <ArrowRight className="h-3 w-3 mr-2 opacity-70" />
-                    {service}
-                  </span>
+                    {service.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -200,7 +205,7 @@ const Footer = () => {
 
       {/* Section de copyright */}
       <div className="border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <motion.p
               initial={{ opacity: 0 }}

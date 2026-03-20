@@ -16,8 +16,28 @@ import {
 } from 'lucide-react';
 import React from 'react';
 
+type FormData = {
+  typePret: string;
+  montant: string;
+  duree: string;
+  civilite: string;
+  nom: string;
+  prenom: string;
+  dateNaissance: string;
+  adresse: string;
+  codePostal: string;
+  ville: string;
+  pays: string;
+  email: string;
+  confirmEmail: string;
+  telephone: string;
+  situationFamiliale: string;
+  profession: string;
+  revenuMensuel: string;
+};
+
 const LoanForm = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     // Type de Crédit
     typePret: '',
     // Montant et durée
@@ -44,9 +64,9 @@ const LoanForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (e: { target: { name: any; value: any; }; }) => {
+  const handleChange: React.ChangeEventHandler<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement> = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData(prev => ({ ...prev, [name]: value } as FormData));
   };
 
   const formatCurrency = (value: string) => {
@@ -131,7 +151,7 @@ const LoanForm = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 py-12 pt-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* En-tête */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -139,7 +159,7 @@ const LoanForm = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
             Votre Demande de <span className="text-blue-600">Crédit</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -187,7 +207,7 @@ const LoanForm = () => {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -20 }}
           transition={{ duration: 0.3 }}
-          className="bg-white rounded-2xl shadow-xl overflow-hidden"
+          className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100"
         >
           <form
             onSubmit={handleSubmit}

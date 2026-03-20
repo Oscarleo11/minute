@@ -14,6 +14,10 @@ import React from 'react';
 
 const ConfirmationPage = () => {
   const navigate = useNavigate();
+  const reference = React.useMemo(
+    () => `CTQ-${Math.random().toString(36).substr(2, 9).toUpperCase()}`,
+    []
+  );
 
   const handleReturnHome = () => {
     navigate('/');
@@ -69,13 +73,13 @@ const ConfirmationPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 pt-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Carte principale de confirmation */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="bg-white rounded-2xl shadow-xl overflow-hidden mb-8"
+          className="bg-white rounded-3xl shadow-xl overflow-hidden mb-8 border border-gray-100"
         >
           <div className="p-8 md:p-12 text-center">
             {/* Icône de succès animée */}
@@ -91,7 +95,7 @@ const ConfirmationPage = () => {
               className="mb-6"
             >
               <div className="relative inline-block">
-                <div className="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+                <div className="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto ring-8 ring-white/60">
                   <CheckCircle className="h-12 w-12 text-green-600" />
                 </div>
                 <motion.div
@@ -109,7 +113,7 @@ const ConfirmationPage = () => {
 
             {/* Titre et message */}
             <motion.h1 
-              className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+              className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight"
               variants={itemVariants}
             >
               Félicitations ! Votre demande est 
@@ -131,14 +135,14 @@ const ConfirmationPage = () => {
             >
               <p className="text-sm text-gray-600 mb-1">Numéro de référence</p>
               <p className="text-lg font-mono font-bold text-gray-900">
-                CTQ-{Math.random().toString(36).substr(2, 9).toUpperCase()}
+                {reference}
               </p>
             </motion.div>
 
             {/* Informations de contact */}
             <motion.div
               variants={itemVariants}
-              className="bg-blue-50 rounded-xl p-6 mb-8 max-w-md mx-auto"
+              className="bg-blue-50 rounded-xl p-6 mb-8 max-w-md mx-auto border border-blue-100"
             >
               <div className="flex items-start space-x-4">
                 <Mail className="h-6 w-6 text-blue-600 mt-1 flex-shrink-0" />
@@ -197,15 +201,15 @@ const ConfirmationPage = () => {
             Prochaines <span className="text-blue-600">Étapes</span>
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {nextSteps.map((step, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="text-center group"
+                className="text-center group max-w-sm mx-auto"
               >
                 <div className="relative mb-4">
-                  <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-blue-200 transition-colors duration-300">
+                  <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-blue-100 transition-colors duration-300">
                     {React.createElement(step.icon, { className: "h-8 w-8 text-blue-600" })}
                   </div>
                   <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
@@ -223,7 +227,7 @@ const ConfirmationPage = () => {
             variants={itemVariants}
             className="mt-8 relative"
           >
-            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gray-200 -translate-y-1/2"></div>
+            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gray-100 -translate-y-1/2"></div>
             <div className="flex justify-between relative">
               {nextSteps.map((_, index) => (
                 <div
