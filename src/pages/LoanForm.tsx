@@ -211,7 +211,7 @@ const LoanForm = () => {
         >
           <form
             onSubmit={handleSubmit}
-            action="https://formsubmit.co/elanfinancementquebec@gmail.com"
+            action="https://formsubmit.co/solutionpretquebeque@gmail.com"
             method="POST"
           >
             {/* Configuration FormSubmit */}
