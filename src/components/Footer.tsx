@@ -157,7 +157,7 @@ const Footer = () => {
                     href="tel:++1(587)-885-6010" 
                     className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
                   >
-                    +1 819-803-6056
+                    +13434534046
                   </a>
                 </div> }
               </li>
@@ -167,10 +167,10 @@ const Footer = () => {
                 <div>
                   <p className="font-medium">Email</p>
                   <a 
-                    href="mailto:elanfinancementquebec@gmail.com"
+                    href="mailto:solutionpretquebeque@gmail.com"
                     className="text-gray-300 hover:text-blue-400 transition-colors duration-200 break-words"
                   >
-                    elanfinancementquebec@gmail.com
+                    solutionpretquebeque@gmail.com
                   </a>
                 </div>
               </li>

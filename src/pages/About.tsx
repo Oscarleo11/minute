@@ -171,13 +171,13 @@ const About = () => {
               {
                 icon: Target,
                 title: "Notre Mission",
-                description: "Rendre le financement accessible à tous les Québécois en offrant des solutions personnalisées et rapides pour tous types de besoins.",
+                description: "Rendre le financement accessible à tous en offrant des solutions personnalisées et rapides pour tous types de besoins.",
                 features: ["Accessibilité financière", "Solutions sur mesure", "Processus simplifié"]
               },
               {
                 icon: Award,
                 title: "Nos Valeurs",
-                description: "Rapidité, intégrité et transparence sont au cœur de chacune de nos actions et décisions.",
+                description: "Promptitude, intégrité et transparence sont au cœur de chacune de nos actions et décisions.",
                 features: ["Transparence totale", "Intégrité exemplaire", "Rapidité d'exécution"]
               },
               {
@@ -206,7 +206,7 @@ const About = () => {
                     <li key={featureIndex} className="flex items-center text-sm text-gray-600">
                       <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
                       {feature}
-                    </li>
+                    </li> 
                   ))}
                 </ul>
               </motion.div>
